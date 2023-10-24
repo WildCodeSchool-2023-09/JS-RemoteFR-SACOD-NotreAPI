@@ -1,0 +1,23 @@
+{
+  "name": "my-api",
+  "version": "1.0.0",
+  "description": "Création de notre 1er API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/WildCodeSchool-2023-09/JS-RemoteFR-SACOD-NotreAPI.git"
+  },
+  "keywords": [
+    "api",
+    "express"
+  ],
+  "author": "Team SACOD",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WildCodeSchool-2023-09/JS-RemoteFR-SACOD-NotreAPI/issues"
+  },
+  "homepage": "https://github.com/WildCodeSchool-2023-09/JS-RemoteFR-SACOD-NotreAPI#readme"
+}
