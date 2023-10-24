@@ -22,15 +22,12 @@ app.get("/", (req, res) => {
 
 	if (learn) {
 		const userLearn = data.users.filter((user) => user.learn === learn);
-
 		if (parseInt(limit)) {
-			res.json(userLearn.slice(0, parseInt(limit)));
+			return res.json(userLearn.slice(0, parseInt(limit)));
 		}
-
-		res.json(userLearn);
+		return res.json(userLearn);
 	}
-
-	res.json(data.users.slice(0, 10));
+	return res.json(data.users.slice(0, 10));
 });
 
 /**
