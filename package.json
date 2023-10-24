@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/WildCodeSchool-2023-09/JS-RemoteFR-SACOD-NotreAPI/issues"
   },
-  "homepage": "https://github.com/WildCodeSchool-2023-09/JS-RemoteFR-SACOD-NotreAPI#readme"
+  "homepage": "https://github.com/WildCodeSchool-2023-09/JS-RemoteFR-SACOD-NotreAPI#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
