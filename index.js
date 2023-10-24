@@ -12,7 +12,25 @@ const data = require("./db.json");
  */
 
 app.get("/", (req, res) => {
-	res.json(data);
+	// console.info(req.query);
+	// output
+	// { limit : "5" }
+	// avec parseInt
+	// { limit : 5 }
+
+	const { learn, limit } = req.query;
+
+	if (learn) {
+		const userLearn = data.users.filter((user) => user.learn === learn);
+
+		if (parseInt(limit)) {
+			res.json(userLearn.slice(0, parseInt(limit)));
+		}
+
+		res.json(userLearn);
+	}
+
+	res.json(data.users.slice(0, 10));
 });
 
 /**
