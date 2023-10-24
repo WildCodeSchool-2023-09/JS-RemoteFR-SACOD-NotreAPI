@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 
+const cors = require("cors");
+app.use(cors());
+
 const PORT = 5500;
 
 const data = require("./db.json");
@@ -12,22 +15,22 @@ const data = require("./db.json");
  */
 
 app.get("/", (req, res) => {
-	// console.info(req.query);
-	// output
-	// { limit : "5" }
-	// avec parseInt
-	// { limit : 5 }
+  // console.info(req.query);
+  // output
+  // { limit : "5" }
+  // avec parseInt
+  // { limit : 5 }
 
-	const { learn, limit } = req.query;
+  const { learn, limit } = req.query;
 
-	if (learn) {
-		const userLearn = data.users.filter((user) => user.learn === learn);
-		if (parseInt(limit)) {
-			return res.json(userLearn.slice(0, parseInt(limit)));
-		}
-		return res.json(userLearn);
-	}
-	return res.json(data.users.slice(0, 10));
+  if (learn) {
+    const userLearn = data.users.filter((user) => user.learn === learn);
+    if (parseInt(limit)) {
+      return res.json(userLearn.slice(0, parseInt(limit)));
+    }
+    return res.json(userLearn);
+  }
+  return res.json(data.users.slice(0, 10));
 });
 
 /**
@@ -35,17 +38,17 @@ app.get("/", (req, res) => {
  */
 
 app.get("/:id", (req, res) => {
-	const id = parseInt(req.params.id); // optionnel
-	const user = data.users.find((user) => user.id === id);
-	res.json({ user: user });
+  const id = parseInt(req.params.id); // optionnel
+  const user = data.users.find((user) => user.id === id);
+  res.json({ user: user });
 });
 
 app.listen(PORT, (err) => {
-	if (err) {
-		console.info("Oups, une erreur est servenu: ", err);
-	} else {
-		console.info(
-			`Le serveur est lancé sur le port ${PORT}. Accès http://localhost:${PORT}`
-		);
-	}
+  if (err) {
+    console.info("Oups, une erreur est servenu: ", err);
+  } else {
+    console.info(
+      `Le serveur est lancé sur le port ${PORT}. Accès http://localhost:${PORT}`
+    );
+  }
 });
